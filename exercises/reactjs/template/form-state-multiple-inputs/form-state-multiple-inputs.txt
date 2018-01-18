@@ -1,0 +1,29 @@
+//0
+se crea el react component "Empleado"
+
+//1
+Se pasan las propiedades (props) al  constructor del componente "Empleado". Recuerda que estas "props" son solo de lectura.
+
+//2
+se pasan las propiedades (props) al constructor de la clase "base" de react. Esto es buena practica, puede que si no lo hagas aun funcione pero puede presentar bugs en el futuro
+
+//3
+En la instancia del componente "Empleado" se agregan  e inicializan en su "state" las propiedades que van a ser modificadas
+
+//4
+"bind" recuerda que sirve para pasar una copia exacta de la funcion que la esta usando, pero el objeto que le pases como parametro sera el que objeto que representara al "this" dentro de esa funcion
+
+handleChange.bind(this) y handleSubmit(this) lo que hacen es decirle que la instancia del componente "Empleado" sera la que representara al "this" dentro de la funcion
+
+//5
+handleChange(event) sera mandado llamar cada que el usuario inserte un valor en el input, del objeto "event" obtendremos el "name" del input y su "value"
+
+//6
+handleSubmit(event) sera mandado llamar cuando el usuario le de click al boton submit. Si no queremos que el submit vaya a hacer el post entonces tenemos que evitar que lo haga con el "event.preventDefault()"
+
+//7
+El metodo "render()" tendra un "return" que es el que regresara el  html que se actualizara en el DOM
+
+En el form hay un atributo "onSubmit" de reactjs, este se encargara  de mandar llamar al metodo "handleSubmit" cuando  el usuario le de click al boton
+
+En cada "input" hay un atributo "onChange" de reactjs, este mandara llamar al metodo "handleChange" cada que el usuario ponga un valor en el "input"

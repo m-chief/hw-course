@@ -1,0 +1,32 @@
+[URLs]
+solid
+http://www.c-sharpcorner.com/UploadFile/damubetha/solid-principles-in-C-Sharp/
+
+solid with js
+https://thefullstack.xyz/solid-javascript
+
+
+[ReactJS]
+React Course
+M.E.R.N.
+
+M=MongDB
+E=Express
+R=React
+N=Node
+
+react virtual dom (reconciliation) //STUDY
+
+
+in react the "props" are "inputs(parametrs)"
+
+
+
+ReatDOM.render //STUDY
+
+#report phone 0016094093737 /1/5/
+			
+
+
+bodyParser.json()
+bodyParser.urlencoded

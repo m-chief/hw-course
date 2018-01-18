@@ -1,0 +1,75 @@
+[props vs state]
+props
+son las propiedades que definas y pasaran como parametros. Solo son de lectura "NO SE PUEDE ASIGNAR VALOR A LAS props".Se pueden pasar cuando mandas llamar al componente, o bien dentro del componente puede llamar otro componente y ahi declarar los props
+
+state
+se deben de crear e inicializar (dar valor) en el constructor, "SI SE PUEDE ASIGNAR VALORES A LOS state", para cambiar el valor despues se tiene que usar "setState"
+
+
+
+CHECK:
+[reactjs form]
+this.handleChange = this.handleChange.bind(this);
+this.handleSignUp = this.handleSignUp.bind(this);
+
+handleChange(e) {
+this.setState({login: e.target.value});
+}
+
+handleSignUp() {
+alert(`Welcome aboard, ${this.state.login}!`);
+}
+
+SOLID PRINCIPLES
+
+[declarar props en un componente y props.children	]
+https://codepen.io/gaearon/pen/kkEaOZ?editors=0010
+
+
+
+[forms]
+https://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/
+https://lorenstewart.me/2017/06/10/react-js-forms-using-refs/
+https://www.sitepoint.com/work-with-forms-in-react/
+
+
+http://mern.io/
+git clone https://github.com/Hashnode/mern-starter.git
+C:\Program Files\MongoDB\Server\3.6\bin
+
+[React.js#10 Handling multiple inputs]
+youtube
+
+
+
+
+
+
+[sync input value cuando el usuario inserte valor]
+el value en "input value={this.state.title}" es el que se le pondra cuando se envie el request, ese valor debe de ser asignado por el "state", pero quien le pone el state? bueno, para eso tenemos que crear una funcion que monitore cuando el usuario ponga un value y esta funcion (handleChange) setee el value usando el "setState".  Recuerda que las variables que uses en el state se tienen que inicializar en el constructor
+
+Pero que pasa cuando son dos input? (aun no se...)
+
+class Empleado extends React.Component{
+	constructor(props){
+		super(props);
+
+		handleChange(event) {
+			this.setState({title: event.target.value})
+		}
+	}
+
+	render(){
+		return(
+			//el value de "title" se seteara en el "state" y despues el input recibe el valor
+			<input type="text" name="title" value={this.state.title} 
+			onChange={this.handleChange.bind(this)}/>
+			
+			<p>{this.state.title}</p>
+		);
+	}
+}
+
+
+La funcion "onChange" es de reactjs y se manda llamar automagicamente cuando el usuario escriba un valor al input, esta fn manda llamar a "handleChange" y aqui ve como el .bind(this) le dice que el "this" ahora sera del elemento  input del dom que se uso
+onChange={this.handleChange.bind(this)}

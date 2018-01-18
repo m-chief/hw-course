@@ -1,0 +1,60 @@
+[jsx]
+it's called javascript extension (jsx) y se usa con reactjs para definir como debe de lucir el UI (html)
+
+const element = <h1>Hello, world!</h1>;
+
+
+
+
+#state/props
+#SOLID principles applied
+
+
+
+cuando uses un componente el nombre tiene que estar en mayuscula, y la funcion a la que apunte tambien debe tener el mismo nombre
+
+
+
+constructor/super
+cuando creas un react-component tienes que mandar llamar al super (y tambien pasarle los props0 porque es el constructor de la clase de reactjs y si no lo haces puede causar bugs)
+
+
+props readonly and private for component 
+state will change 
+
+https://www.tutorialspoint.com/reactjs/reactjs_state.htm  //state example
+
+
+[keys]
+cuando iteras algo los elementos html que se creen van a tener que tener un id unico, este id no sera rendereado y solo servira para llevar un control de reactjs y que puedas obtener la informacion de ese elemento html
+
+
+[PROPS & STATE]
+PROPS 
+to children
+immutable (readonly)
+same state (i.e. static)
+
+STATE
+shared //No (between components)
+global //Redux
+Mutable
+local & private
+
+props -> state // AVOID (99%) antipattern
+state -> props// OK to children components
+
+
+
+
+Everything parameters that will work as a props will need to be within {} (curly braces) {"alan"}, {32}, etc
+
+
+
+
+call apply bind
+http://www.enrique7mc.com/2016/05/call-apply-y-bind-en-javascript/
+
+
+bind
+https://stackoverflow.com/questions/2236747/use-of-the-javascript-bind-method
