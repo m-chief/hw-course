@@ -40,7 +40,9 @@ C:\Program Files\MongoDB\Server\3.6\bin
 [React.js#10 Handling multiple inputs]
 youtube
 
-
+[create reactjs app]
+npx create-react-app myapp
+npm start
 
 
 

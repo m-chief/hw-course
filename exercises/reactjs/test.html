@@ -11,53 +11,24 @@
 
 <body>
     <div id="root"></div>
+
     <script type="text/babel">
-    //0
     class Empleado extends React.Component{
-        //1 
         constructor(props){
-            //2
             super(props);
-            //3
-            this.state = {
-                name: "",
-                lastName: ""
-            };
-            //4
-            this.handleChange = this.handleChange.bind(this);
-            this.handleSubmit = this.handleSubmit.bind(this);
+
+
         }
-        //5
-        handleChange(event) {
-            this.setState({[event.target.name]: event.target.value});
-        }
-        //6
-        handleSubmit(event){
-            alert('you submitted text data');
-            
-            event.preventDefault();
-        }
-        //7
+
         render(){
             return(
-                //8
-                <form onSubmit={this.handleSubmit} className="inputForm">
-                    Name: <input type="text" name="name" value={this.state.name} 
-                    onChange={this.handleChange}/>
-
-                    lastName: <input type="text" name="lastName" value={this.state.lastName} 
-                    onChange={this.handleChange}/>
-
-                    <p>{this.state.name} {this.state.lastName} {this.props.age}</p>
-
-                    <input type="submit" value="submiteado" />
-                </form>
+                <p>test</p>
             );
         }
     }
-    //9
+
     ReactDOM.render(
-        <Empleado age={43} />,
+        <Empleado age={32} />,
         document.getElementById("root")
     );
     </script>
