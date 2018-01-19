@@ -79,3 +79,14 @@ class Empleado extends React.Component{
 
 La funcion "onChange" es de reactjs y se manda llamar automagicamente cuando el usuario escriba un valor al input, esta fn manda llamar a "handleChange" y aqui ve como el .bind(this) le dice que el "this" ahora sera del elemento  input del dom que se uso
 onChange={this.handleChange.bind(this)}
+
+
+
+Single source of truth
+Basically, when you want to implement 'single source of truth', you want to make your components controllable.
+
+By default input fields are not controllable which means it will render data from DOM, not state.
+
+However, if you make your input listen to state instead (therefore making it controllable) it will not be able to change its value unless you change state.
+
+First effect you will notice is that, once you added value property to it, when you type in, nothing will change. And if you add onChange method that changes state, it will be fully controllable component that only listens to one source of truth; state, instead of DOM events.
