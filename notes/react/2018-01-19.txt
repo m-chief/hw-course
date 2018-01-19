@@ -25,6 +25,9 @@ SOLID PRINCIPLES
 [declarar props en un componente y props.children	]
 https://codepen.io/gaearon/pen/kkEaOZ?editors=0010
 
+create simple reactjs app
+https://reactjs.org/blog/2016/07/22/create-apps-with-no-configuration.html
+
 
 
 [forms]
@@ -42,6 +45,7 @@ youtube
 
 [create reactjs app]
 npx create-react-app myapp
+npm install
 npm start
 
 

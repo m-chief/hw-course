@@ -1,0 +1,15 @@
+Currency converter
+Write a simple front-end web app using the reactive web design principles
+that converts 4 monetary currencies ($, MXN, British Pound, Euro) and keeps
+the values in sync real-time when the amount is entered in any of the four currencies.
+ Questions to answer:
+* How the lifting state up was implemented in practice?
+* Responsive web design & SOLID * UI components
+* State & props understanding, single source of truth...
+
+references:
+[currency converter]
+http://www.xe.com/es/currencyconverter/convert/?Amount=1&From=EUR&To=MXN
+
+[example]
+https://stackoverflow.com/questions/19774387/html-javascript-currency-converter

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Currency Converter</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+    class Converter extends React.Component{
+        constructor(props){
+        super(props);
+        
+        this.state = {
+            gbp: "",
+            mx: "",
+            usd: "",
+            eur: ""
+        };
+
+        this.gbpConverter = this.gbpConverter.bind(this);
+        this.usdConverter = this.usdConverter.bind(this);
+        this.eurConverter = this.eurConverter.bind(this);
+        this.mxConverter = this.mxConverter.bind(this);
+    }
+    
+    gbpConverter(event)
+    {
+        const gbpCurrency = event.target.value;
+        this.setState({gbp: gbpCurrency});
+
+        const mxConvertedCurrency = parseFloat(gbpCurrency) * 25.7765;
+        this.setState({mx:mxConvertedCurrency});
+        const usdConvertedCurrency = parseFloat(gbpCurrency) * 0.49246;
+        this.setState({usd:usdConvertedCurrency});
+        const eurConvertedCurrency = parseFloat(gbpCurrency) * 0.69714;
+        this.setState({eur:eurConvertedCurrency});
+    }
+
+    usdConverter(event)
+    {
+        const usdCurrency = event.target.value;
+        this.setState({usd: usdCurrency});
+
+        const eurConvertedCurrency = parseFloat(usdCurrency) * 1.41544;
+        this.setState({eur:eurConvertedCurrency});
+        const gbpConvertedCurrency = parseFloat(usdCurrency) * 2.03032;
+        this.setState({gbp:gbpConvertedCurrency});
+        const mxConvertedCurrency = parseFloat(usdCurrency) * 18.5809;
+        this.setState({mx:mxConvertedCurrency});
+    }
+
+    eurConverter(event)
+    {
+        const eurCurrency = event.target.value;
+        this.setState({eur: eurCurrency});
+
+        const usdConvertedCurrency = parseFloat(eurCurrency) * 0.70641;
+        this.setState({usd:usdConvertedCurrency});
+        const gbpConvertedCurrency = parseFloat(eurCurrency) * 1.43448;
+        this.setState({gbp:gbpConvertedCurrency});
+        const mxConvertedCurrency = parseFloat(eurCurrency) * 22.7467;
+        this.setState({mx:mxConvertedCurrency});
+    }
+    
+    mxConverter(event)
+    {
+        const mxCurrency = event.target.value;
+        this.setState({mx: mxCurrency});
+
+        const usdConvertedCurrency = parseFloat(mxCurrency) * 0.053874;
+        this.setState({usd:usdConvertedCurrency});
+        const gbpConvertedCurrency = parseFloat(mxCurrency) * 0.0388174;
+        this.setState({gbp:gbpConvertedCurrency});
+        const eurConvertedCurrency = parseFloat(mxCurrency) * 0.0439752;
+        this.setState({eur:eurConvertedCurrency});
+    }
+
+    render(){
+        return(
+                <form>
+                    <input type="text" id="gbp" name="gbp" size="15" onChange={this.gbpConverter} />
+                    <label> GBP </label>
+                    <br />
+
+                    <input type="text" id="usd" name="usd" size="15" onChange={this.usdConverter} />
+                    <label> USD </label>
+                    <br />
+
+                    <input type="text" id="eur" name="eur" size="15" onChange={this.eurConverter} />
+                    <label> EUR </label>
+                    <br />
+
+                    <input type="text" id="mx" name="mx" size="15" onChange={this.mxConverter} />
+                    <label> MX </label>
+                    <br />
+
+                    <p>
+                       MX: {this.state.mx}<br />
+                       USD: {this.state.usd}<br />
+                       EUR: {this.state.eur}<br /> 
+                       GBP: {this.state.gbp}<br />
+                       </p>
+                </form>
+            );
+        }
+    }
+
+    ReactDOM.render(
+        <Converter />,
+        document.getElementById("root")
+    );
+    </script>
+</body>
+</html>
