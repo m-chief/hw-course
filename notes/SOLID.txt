@@ -1,0 +1,20 @@
+SOLID
+S: [single responsibility principle]
+Cada clase, module, o estructura similar (en reactjs seria "component") debe de hacer solo una cosa
+
+O: [Open/Closed principle]
+Una clase, module, o estructura similar debe de estar abierta para extensiones y cerrada para modificaciones
+
+Closed for modifications.- quiere decir que la clase, module, etc, esta funcionando y ya se le hicieron unit-tests, no se debe de alterar (al menos que se encuentren bugs)
+
+Open for extensions.- si la clase, module, etc, esta cerrada entonces "inheritance" o "extension methods" es una buena opcion para extender su funcionalidad sin modificarla.
+
+L: [Liskov substitution Principle]
+Es una extension de "Open/Closed", solo asegura que cuando pases una clase "derivada" al usar esta NO afectara el comportamiento de una clase "base"
+
+I: [Interface Segregation Principle (ISP)]
+Dice que el cliente no debe ser forzado a usar interfaces que no utilizara, si tienes que implementar una interface que te fuerza a implementar metodos que no vas a usar entonces seria mejor dividir esa interface en varias mas pequenas
+
+D: [Dependency Inversion Principle]
+las clases, modules, etc, de alto nivel no deben depender de clases, modules, etc, de bajo nivel... sino que deben de depender de abstracciones (esto es el DI que ya conoces)
+
