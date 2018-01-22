@@ -1,0 +1,48 @@
+babel
+1) agregar el package.json
+npm init
+
+2) agregar al package.json la metadata de la libreria de babel
+npm install --save-dev babel-cli
+
+3) deberia de verse asi 
+{
+  "devDependencies": {
++   "babel-cli": "^6.0.0"
+  }
+}
+
+
+
+http://www.programwitherik.com/understanding-the-babel-compiler-2016/
+
+
+====================================================================
+mkdir babelexample
+cd babelexample
+npm init
+npm install --save-dev babel-cli
+npm install --save-dev babel-preset-es2015  //this addon is to use the new syntax additions
+
+
+//setear para que babel pueda usar es2015
+package.json
+{
+  "name": "test2",
+  "version": "1.0.0",
+  "babel": {
+      "presets": [
+        "babel-preset-es2015"
+      ]
+   },
+  "description": "",
+  "main": "polygon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+./node_modules/.bin/babel src -d dest
