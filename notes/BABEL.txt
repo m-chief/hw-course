@@ -47,3 +47,4 @@ package.json - add it to your package.json
   }
 }
 
+OJO, se recomienda  instalar babel de forma local (por proyecto), en lugar de forma global ya que es mejor
