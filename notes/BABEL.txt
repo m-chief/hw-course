@@ -1,0 +1,49 @@
+1) create package.json file
+npm init
+
+2) Install babel locally in your repository
+npm install --save-dev babel-cli
+
+3) add the command to run babel whenever you run the command "npm run build", you'll specify a "src" folder that will contain your es6 code, and a "lib" folder that will generate the es6 code transpiled to old js whenever you run the command "npm run build"
+{
+	"name": "my-project",
+	"version": "1.0.0",
+	"scripts": {
+	  "build": "babel src -d lib"
+	},
+	"devDependencies": {
+	  "babel-cli": "^6.0.0"
+	}
+}
+
+4) add "env" preset locally n  your repository so babel can transpile "es6" to old javascript ("env" includes es2015, and other)
+npm install babel-preset-env --save-dev
+
+5) specify that you'll be using  "env" to transpile es6 to old js, you can do this in ".babelrc" or "package.json"
+.babelrc - create ".babelrc" folder and specify that you'll be using "env" preset so babel can transpile
+{
+  "presets": ["env"]
+}
+
+package.json - add it to your package.json
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "babel":{
+    "presets": [
+      "env"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
+
